@@ -1,18 +1,17 @@
 import pyodbc
 from flask import Flask, jsonify
 from flask_cors import CORS
-from flask import Flask, jsonify, request  # <-- Be sure to add , request here
+from flask import Flask, jsonify, request  
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 def get_db_connection():
-    # Ajusta estos 4 valores con tus datos reales
-    server = 'Emiliano'      # Ej: DESKTOP-1234 o localhost
-    database = 'CapyHamsterBB'  # Ej: CapyHamsterHub
-    username = 'sa'     # Tu usuario de SQL (ej: sa)
-    password = '1234'    # Tu contraseña
+    server = 'Emiliano' 
+    database = 'CapyHamsterBB'  
+    username = 'sa'    
+    password = '1234'    
     
     conn_str = (
         f'DRIVER={{SQL Server}};'
@@ -41,7 +40,6 @@ def obtener_productos():
         conn.close()
         return jsonify(resultados)
     except Exception as e:
-        # Esto dirá exactamente qué falló en el navegador
         return jsonify({"error": str(e)}), 500
     
 # Agrega esto a tu archivo app.py
@@ -52,13 +50,11 @@ def agregar_producto():
         conn = get_db_connection()
         cursor = conn.cursor()
         
-        # Query adaptada a la tabla única 'Producto'
         query = """
             INSERT INTO Producto (Nombre, Categoria, Precio, Stock, Activo)
             VALUES (?, ?, ?, ?, ?)
         """
         
-        # Convertimos el estado de texto a BIT (1 o 0)
         activo = 1 if nuevo_producto.get('Estado') == 'Activo' else 0
         
         cursor.execute(query, (

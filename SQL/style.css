@@ -1,16 +1,13 @@
-/* =========================================
-   CONFIGURACIÓN GENERAL
-   ========================================= */
-/* We block scrolling across the web */
+
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Esto elimina la barra de scroll principal */
+    overflow: hidden; 
 }
 
 .container {
     display: flex;
-    height: 100vh; /* Altura exacta de la pantalla */
+    height: 100vh; 
     width: 100vw;
     overflow: hidden;
 }
@@ -18,16 +15,14 @@ html, body {
 .main-content {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Alinea el header y la tabla verticalmente */
+    flex-direction: column; 
     height: 100vh;
     padding: 20px;
     background-color: white;
-    overflow: hidden; /* Evita que el contenido principal empuje la página hacia abajo */
+    overflow: hidden; 
 }
 
-/* =========================================
-   BARRA LATERAL (SIDEBAR)
-   ========================================= */
+/* BARRA LATERAL (SIDEBAR)*/
 .sidebar {
     width: 250px;
     background-color: #b0c4de; 
@@ -70,16 +65,16 @@ nav ul {
 
 /* BUTTONS (li) */
 nav li {
-    width: 100%;        /* Ocupa todo el ancho del sidebar */
-    padding: 15px 15px; /* Espacio interno para que el texto no pegue a la orilla */
+    width: 100%;        
+    padding: 15px 15px; 
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    display: flex;      /* Para alinear iconos y texto */
+    display: flex;      
     align-items: center;
     gap: 10px;
     transition: background 0.3s;
-    border-radius: 0;   /* Quitamos bordes redondeados para que se vea uniforme */
+    border-radius: 0;   
 }
 
 nav li:hover {
@@ -88,7 +83,7 @@ nav li:hover {
 
 /* Clase para el botón seleccionado */
 nav li.active, nav li:hover {
-    background-color: #9db2cc; /* El color de selección que usas */
+    background-color: #9db2cc; 
     width: 100%;
 }
 
@@ -101,22 +96,20 @@ nav li.active, nav li:hover {
 
 
 
-/* =========================================
-   CONTENIDO PRINCIPAL Y PANELES
-   ========================================= */
+/* CONTENIDO PRINCIPAL Y PANELES */
 .main-content {
     flex: 1;
     padding: 30px;
     background-color: white;
-    overflow-y: auto; /* Permite scroll si el contenido es mucho */
+    overflow-y: auto; 
 }
 
 .content-panel {
-    display: none; /* Oculto por defecto */
+    display: none; 
 }
 
 .content-panel.active-panel {
-    display: block; /* Se muestra cuando tiene esta clase */
+    display: block; 
 }
 
 /* Estilo Bienvenida */
@@ -130,9 +123,7 @@ nav li.active, nav li:hover {
     color: #555;
 }
 
-/* =========================================
-   SECCIÓN INVENTARIO (TABLA Y HEADER)
-   ========================================= */
+
 .inventario-header {
     display: flex;
     justify-content: space-between;
@@ -172,8 +163,8 @@ nav li.active, nav li:hover {
 /* CONTENEDOR DE LA TABLA CON MEDIDA ESPECÍFICA */
 .main-table-container {
     width: 100%;
-    max-height: 550px; /* ALTURA FIJA PARA QUE NO SE ALARGUE LA WEB */
-    overflow-y: auto;  /* ACTIVA EL SCROLL INTERNO */
+    max-height: 550px; 
+    overflow-y: auto;  
     border: 1px solid #ddd;
     border-radius: 4px;
 }
@@ -181,7 +172,7 @@ nav li.active, nav li:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Mantiene las columnas estables */
+    table-layout: fixed; 
 }
 
 /* Encabezado fijo (Sticky) */
@@ -202,10 +193,10 @@ td {
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Pone "..." si el texto no cabe */
+    text-overflow: ellipsis;
 }
 
-/* Anchos de columna exactos */
+
 th:nth-child(1), td:nth-child(1) { width: 80px; text-align: center; } /* Activo */
 th:nth-child(2), td:nth-child(2) { width: 30%; } /* Nombre */
 th:nth-child(3), td:nth-child(3) { width: 25%; } /* Categoría */
@@ -219,7 +210,7 @@ th:nth-child(5), td:nth-child(5) { width: 15%; } /* Stock */
 }
 
 tr:hover {
-    background-color: #f0f7ff; /* Efecto azul claro al pasar el mouse */
+    background-color: #f0f7ff; 
 }
 
 /* BARRA DE SCROLL MODERNA */

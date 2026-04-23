@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a los paneles
+    //Referencias a los paneles
     const btnInicio = document.getElementById('btn-inicio');
     const btnInventario = document.getElementById('btn-inventario');
     const panelInicio = document.getElementById('panel-inicio');
     const panelInventario = document.getElementById('panel-inventario');
 
-    // Referencias al Modal
+    //Referencias al Modal
     const modal = document.getElementById('modal-producto');
     const btnAbrirModal = document.getElementById('btn-abrir-modal');
     const btnCancelar = document.getElementById('btn-cancelar');
     const btnGuardar = document.getElementById('btn-guardar-sql');
 
-    // --- NAVEGACIÓN ---
+    //NAVEGACIÓN ENTRE PANELES
     btnInicio.onclick = () => {
         panelInicio.style.display = 'block';
         panelInventario.style.display = 'none';
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarProductos();
     };
 
-    // --- MODAL ---
+    //MODAL
     btnAbrirModal.onclick = () => modal.style.display = 'flex';
     btnCancelar.onclick = () => modal.style.display = 'none';
 
-    // --- GUARDAR EN SQL ---
+    //GUARDAR EN SQL
     btnGuardar.onclick = async () => {
         // Obtenemos los valores. ¡Revisa que estos IDs existan en tu HTML!
         const nombre = document.getElementById('nombre-prod').value;
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-// Función para cargar la tabla
+//Función para cargar la tabla
 async function cargarProductos() {
     const tabla = document.getElementById('cuerpo-tabla-inventario');
     try {
